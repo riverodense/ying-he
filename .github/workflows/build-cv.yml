@@ -1,0 +1,32 @@
+name: Build and publish academic CV
+on:
+  push:
+    paths:
+      - 'assets/CV_YingHe.tex'
+      - '.github/workflows/build-cv.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install XeLaTeX and CV fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-xetex texlive-latex-extra texlive-fonts-recommended fonts-lato fonts-liberation fonts-noto-cjk
+      - name: Compile approved LaTeX CV
+        run: |
+          xelatex -interaction=nonstopmode -halt-on-error -output-directory=assets assets/CV_YingHe.tex
+          xelatex -interaction=nonstopmode -halt-on-error -output-directory=assets assets/CV_YingHe.tex
+          test -s assets/CV_YingHe.pdf
+      - name: Publish updated CV PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/CV_YingHe.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish approved CV PDF"
+            git push
+          fi
