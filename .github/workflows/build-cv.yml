@@ -28,5 +28,5 @@ jobs:
           git add assets/CV_YingHe.pdf
           if ! git diff --cached --quiet; then
             git commit -m "Publish approved CV PDF"
-            git push
+            git push origin HEAD:refs/heads/cv-pdf-update
           fi
