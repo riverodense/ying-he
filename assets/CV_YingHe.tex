@@ -1,0 +1,132 @@
+% Professional faculty CV -- October 2026 (academic records update)
+% A two-tone, typographically restrained design based on the original CV.
+% Compile twice with XeLaTeX. No nonstandard external assets needed.
+\documentclass[10pt,a4paper]{article}
+\usepackage[a4paper,left=0.77in,right=0.77in,top=0.68in,bottom=0.69in,headheight=13pt,footskip=19pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{Liberation Serif}
+\newfontfamily\headingfont{Lato}[UprightFont=*-Bold,BoldFont=*-Heavy]
+\newfontfamily\metafont{Lato}
+\newfontfamily\chinesenamefont{Noto Serif CJK SC}
+\usepackage[table]{xcolor}
+\definecolor{navy}{HTML}{173654}
+\definecolor{ink}{HTML}{20272D}
+\definecolor{slate}{HTML}{596B7A}
+\definecolor{ruleblue}{HTML}{B7C9D8}
+\definecolor{accent}{HTML}{285C80}
+\usepackage{tabularx,array,enumitem,needspace,fancyhdr,microtype}
+\usepackage[colorlinks=true,urlcolor=accent,linkcolor=navy]{hyperref}
+\hypersetup{pdftitle={Ying He | Curriculum Vitae},pdfauthor={Ying He}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.035}
+\setlength{\emergencystretch}{2em}
+\hyphenpenalty=6000
+\exhyphenpenalty=6000
+\color{ink}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\color{slate}\metafont\fontsize{8}{10}\selectfont YING HE \textbar{} CURRICULUM VITAE}
+\fancyfoot[R]{\color{slate}\metafont\fontsize{8}{10}\selectfont \thepage}
+\newcommand{\cvsection}[1]{%
+  \par\addvspace{8.1pt}\needspace{3\baselineskip}%
+  {\headingfont\fontsize{10.35}{12}\selectfont\color{navy}\MakeUppercase{#1}}\par\vspace{3.4pt}%
+  {\color{ruleblue}\hrule height 0.57pt}\vspace{5pt}%
+}
+% Dates are a separate left column to recall the clean original design.
+\newcommand{\cvdated}[3][1.41in]{%
+  \par\noindent\begin{minipage}[t]{#1}\raggedright\raisebox{0.8pt}[0pt][0pt]{\metafont\fontsize{8.55}{11.6}\selectfont\color{slate}#2}\end{minipage}%
+  \hspace{0.11in}%
+  \begin{minipage}[t]{\dimexpr\linewidth-#1-0.11in\relax}\raggedright #3\end{minipage}%
+  \par\vspace{2.4pt}%
+}
+% Teaching rows use a wrapping left cell, unlike the one-line dates.
+\newcommand{\cvteaching}[2]{%
+  \par\noindent\begin{minipage}[t]{2.28in}\raggedright\vspace*{-7pt}\metafont\fontsize{8.55}{11.6}\selectfont\color{slate}\textbf{#1}\end{minipage}%
+  \hspace{0.11in}%
+  \begin{minipage}[t]{\dimexpr\linewidth-2.28in-0.11in\relax}\raggedright #2\end{minipage}%
+  \par\vspace{2.4pt}%
+}
+\newcommand{\cvitem}[1]{%
+ \par\noindent\hangindent=12.5pt\hangafter=1%
+ {\makebox[12.5pt][l]{\color{accent}\fontsize{6}{8}\selectfont\raisebox{1.2pt}{\textbullet}}}#1\par\vspace{1.7pt}%
+}
+\newcommand{\cvcontact}[1]{{\metafont\fontsize{8.4}{10.5}\selectfont #1}}
+\setlist[enumerate]{leftmargin=23pt,labelsep=7pt,align=left,itemsep=4.35pt,topsep=1.5pt,parsep=0pt,partopsep=0pt,
+  label=\textcolor{navy}{\bfseries\arabic*.}}
+\begin{document}
+\begin{center}
+  {\headingfont\fontsize{22}{26}\selectfont\color{navy} YING HE}\par\vspace{1pt}
+  {\chinesenamefont\fontsize{12}{15}\selectfont\color{navy} 何英}\quad{\metafont\fontsize{8.4}{11}\selectfont\color{slate} Pronouns: he/him}\par\vspace{3pt}
+  {\metafont\fontsize{9}{11}\selectfont\color{slate} Associate Professor (with tenure) \quad\textbullet\quad Southern University of Science and Technology}\par
+  \vspace{6pt}
+  {\color{navy}\hrule height 1pt}\vspace{6.4pt}
+  \cvcontact{Shenzhen, China \quad\textcolor{ruleblue}{\textbar}\quad
+    \href{mailto:hey8@sustech.edu.cn}{hey8@sustech.edu.cn} \quad\textcolor{ruleblue}{\textbar}\quad
+    \href{https://riverodense.github.io/ying-he/}{riverodense.github.io/ying-he/}}\par\vspace{2pt}
+  \cvcontact{Department of Marketing and Operations Management \quad\textcolor{ruleblue}{\textbar}\quad
+    ORCID: \href{https://orcid.org/0000-0002-5587-1079}{0000-0002-5587-1079}}
+\end{center}
+\vspace{1.5pt}
+\cvsection{Academic Appointments}
+\cvdated{April 2025 – present}{\textbf{Southern University of Science and Technology}, Associate Professor (with tenure)}
+\cvdated{June 2019 – April 2025}{\textbf{University of Southern Denmark}, Associate Professor of Management Science (with tenure)}
+\cvdated{Aug. 2014 – May 2019}{\textbf{University of Southern Denmark}, Assistant Professor of Management Science}
+\cvdated{Nov. 2013 – Aug. 2014}{\textbf{City University of Hong Kong}, Visiting Assistant Professor of Management Science}
+\cvdated{Sep. 2008 – Oct. 2013}{\textbf{The University of Texas at Austin}, Teaching Assistant}
+\cvsection{Education}
+\cvdated{Sep. 2008 – Dec. 2013}{\textbf{McCombs School of Business, The University of Texas at Austin}\\Ph.D./M.S. in Information, Risk, and Operations Management (Ph.D. 2013; M.S. 2010)}
+\cvdated{Sep. 2004 – Jun. 2008}{\textbf{School of Management, Xi'an Jiaotong University}\\Ph.D. candidate in Management Sciences}
+\cvdated{Sep. 2000 – Jun. 2004}{\textbf{School of Economics and Finance, Xi'an Jiaotong University}\\B.A. in Economics, 2004}
+\cvsection{Academic Service}
+\cvitem{\textbf{Associate Editor, Operations Research (2026--present)}}
+\cvitem{\textbf{Associate Editor, Decision Analysis (2026--present)}}
+\cvitem{Webmaster, INFORMS Decision Analysis Society}
+\cvitem{Member, Scientific Committee, Risk, Uncertainty, \& Decision (RUD) Conference, University of Manchester (2025)}
+\cvitem{Member, Decision Analysis Society Publication Award Committee (2024)}
+\cvitem{Organizing Committee and Scientific Committee Member, Advances in Decision Analysis Conference, University of Virginia Darden School of Business (2022)}
+\cvitem{Elected Council Member, INFORMS Decision Analysis Society (2021-2023)}
+\cvitem{Seminar Coordinator, Management Sciences Seminar Series, University of Southern Denmark (2014-2020)}
+\cvsection{Honors and Awards}
+\cvdated{2025}{Senior Member, INFORMS}
+\cvdated{2024}{Winner, Decision Analysis Practice Award, INFORMS Decision Analysis Society and Society of Decision Professionals}
+\cvdated{2023}{Winner, INFORMS Decision Analysis Society Publication Award}
+\cvdated{2021}{Finalist, Clemen-Kleinmuntz Decision Analysis Best Paper Award}
+\cvdated{2019}{Jaffray Lecture, Risk, Uncertainty, and Decision Conference, Paris School of Economics}
+\cvdated{2014}{Finalist, Decision Analysis Special Recognition Award}
+\cvdated{2011}{First Place, INFORMS Decision Analysis Society Student Paper Competition}
+\cvdated{2008–2013}{Dean's Fellowship, McCombs School of Business, The University of Texas at Austin}
+\cvsection{Research Interests}
+\cvitem{Decision Analysis and Decision Theory; utility and value theory; multiattribute decision making; intertemporal choice}
+\cvitem{Decision Making under Risk and Ambiguity; recursive dynamic models; real option and project valuation}
+\cvitem{Revenue Management; Pricing; Digital Supply Chain; Data-Driven Decision and Operational Analytics}
+\cvsection{Publications}
+\begin{enumerate}
+\needspace{2.2\baselineskip}\item 2025. Li, Y., \textbf{He, Y.}, and Dong, Y. “Preference-sorting structures extending scores and ordered categories: an axiomatic distance approach in group decision making.” \textit{Annals of Operations Research} 353, 1019-1051.
+\needspace{2.2\baselineskip}\item 2025. Liang, H., Dong, Y., and \textbf{He, Y.} “Interpretable preference learning and prediction: A data-driven method based on multiplicative multiattribute utility function with reference effects.” \textit{Information Fusion} 123, 103311.
+\needspace{2.2\baselineskip}\item 2024. \textbf{He, Y.} “Recursive two-stage evaluation model for dynamic decision making under ambiguity.” \textit{Journal of Mathematical Economics} 113, 103022.
+\needspace{2.2\baselineskip}\item 2024. Chen, X., Dong, Y., and \textbf{He, Y.} “Group risky choice and resource allocation under social comparison effects.” \textit{Group Decision and Negotiation} 33, 977-1017.
+\needspace{2.2\baselineskip}\item 2023. Chen, W., \textbf{He, Y.}, and Bansal, S. “Customized dynamic pricing when customers develop a habit or satiation.” \textit{Operations Research} 71(6), 2158-2174.
+\needspace{2.2\baselineskip}\item 2022. \textbf{He, Y.} and Rui, H. “Probabilistic selling in vertically differentiated markets: The role of substitution.” \textit{Production and Operations Management} 31(11), 4191-4204.
+\needspace{2.2\baselineskip}\item 2022. Chen, W. and \textbf{He, Y.} “Dynamic pricing and inventory control with delivery flexibility.” \textit{Annals of Operations Research} 317, 481-508.
+\needspace{2.2\baselineskip}\item 2021. \textbf{He, Y.} “Revisiting Ellsberg and Machina’s paradoxes: A two-stage evaluation model under ambiguity.” \textit{Management Science} 67(11), 6897-6914.
+\needspace{2.2\baselineskip}\item 2021. Dong, Y., Li, Y., \textbf{He, Y.}, and Chen, X. “Preference-approval structures in group decision making: Axiomatic distance and aggregation.” \textit{Decision Analysis} 18(4), 273-295.
+\needspace{2.2\baselineskip}\item 2020. Zhao, S., Dong, Y., and \textbf{He, Y.} “The reliability analysis of rating systems in decision making: When scale meets multi-attribute additive value model.” \textit{Decision Support Systems} 138, 113384.
+\needspace{2.2\baselineskip}\item 2019. \textbf{He, Y.}, Dyer, J. S., Butler, J. C., and Jia, J. “An additive model for decision making under risk and ambiguity.” \textit{Journal of Mathematical Economics} 85, 78-92.
+\needspace{2.2\baselineskip}\item 2019. \textbf{He, Y.}, Dyer, J. S., and Butler, J. C. “A decision making model with utility from anticipation and disappointment.” \textit{Journal of Multi-Criteria Decision Analysis} 26, 35-50.
+\needspace{2.2\baselineskip}\item 2014. \textbf{He, Y.}, Dyer, J. S., and Butler, J. C. “Decomposing a utility function based on discrete distribution independence.” \textit{Decision Analysis} 11(4), 233-249.
+\needspace{2.2\baselineskip}\item 2014. Danielson, M., Ekenberg, L., and \textbf{He, Y.} “Augmenting ordinal methods of attribute weight approximation.” \textit{Decision Analysis} 11(1), 21-26.
+\needspace{2.2\baselineskip}\item 2013. \textbf{He, Y.}, Dyer, J. S., and Butler, J. C. “On the axiomatization of the satiation and habit formation utility models.” \textit{Operations Research} 61(6), 1399-1410.
+\needspace{2.2\baselineskip}\item 2008. \textbf{He, Y.} and Huang, R.-H. “Risk attributes theory: Decision making under risk.” \textit{European Journal of Operational Research} 186(1), 243-260.
+\end{enumerate}
+\cvsection{Selected Working Papers}
+\cvitem{\textbf{He, Y.}, Wang, T., and Dyer, J. S. “An Axiomatic Theory of Valuation Order for Risky Projects in Incomplete Markets.” Working paper, 2025; revised 2026. \href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5415455}{SSRN 5415455}.}
+\cvitem{\textbf{He, Y.} and Hölzermann, J. “Portfolio Selection and Asset Pricing with Ambiguity: A Two-Stage Evaluation Approach.” Working paper, revised January 2026. \href{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5002924}{SSRN 5002924}.}
+\cvsection{Teaching Experience}
+\cvteaching{Southern University of Science and Technology}{Operations Research in Daily Life (Fall 2026); Decision Analysis and Operations Management (MBA, Spring 2026); Data Mining and Data Analysis (Bachelor, Fall 2025)}
+\cvteaching{University of Southern Denmark}{Operations Research; Decision Analysis; Strategic Issues in Supply Chain Management; Supply Chain Inventory and Production Planning; Operations and Supply Chain Management; Business Analytics: Data Driven Decision Making; Business Information System; Business IT Tools; Statistics for Production Development Innovation}
+\cvteaching{City University of Hong Kong}{Life Insurance (Bachelor, Spring 2014)}
+\cvteaching{The University of Texas at Austin}{Business Statistics (Bachelor, Fall 2012)}
+
+\end{document}
